@@ -6,13 +6,16 @@
 function fnSqlLogin($id, $pw)
 {
     $id = addslashes($id);
-    $sql = "SELECT USERNO,AUTHORITY FROM TBLUSER";
+    $sql = "SELECT USERNO,AUTHORITY,PASSWORD FROM TBLUSER";
     $sql .= " WHERE DEL = 1";
     $sql .= " AND ID = '$id'";
     $sql .= " AND PASSWORD = '$pw'";
 
     return ($sql);
 }
+
+//
+
 
 //
 // ユーザー情報リスト
