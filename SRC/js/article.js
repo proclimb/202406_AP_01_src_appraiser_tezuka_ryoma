@@ -16,16 +16,18 @@ function fnArticleEditCheck() {
 	if (isLength(100, "3Dパース", form.drawing)) { return; }
 	if (isLength(100, "営業担当者", form.sellCharge)) { return; }
 
-	form.act.value = 'articleEditComplete';
-	form.submit();
-}
-
-
-
-function fnArticleDeleteCheck(no) {
-	if (confirm('削除します。よろしいですか？')) {
-		form.articleNo.value = no;
-		form.act.value = 'articleDelete';
+	if (confirm('この内容で登録します。よろしいですか？')) {
+		form.act.value = 'articleEditComplete';
 		form.submit();
+	}
+
+
+
+	function fnArticleDeleteCheck(no) {
+		if (confirm('削除します。よろしいですか？')) {
+			form.articleNo.value = no;
+			form.act.value = 'articleDelete';
+			form.submit();
+		}
 	}
 }
