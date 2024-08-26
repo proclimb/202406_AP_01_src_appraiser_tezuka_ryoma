@@ -55,7 +55,7 @@ function fnSqlArticleEdit($articleNo)
 {
 	$sql  = "SELECT ARTICLE, ROOM, KEYPLACE, ADDRESS, ARTICLENOTE, KEYBOX, DRAWING, SELLCHARGE, DEL";
 	$sql .= " FROM TBLARTICLE";
-	$sql .= " WHERE ARTICLENO = 1";
+	$sql .= " WHERE ARTICLENO = $articleNo";
 
 	return ($sql);
 }
